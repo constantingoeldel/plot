@@ -4,22 +4,22 @@ library(gtools)
 #Create a list with the alpha and beta(missing - LATER)
 
 #Alpha data list
-Base_alpha <- list.files(path = "/mnt/extStorage/constantin/windows/", pattern="boot_base_alpha", recursive = TRUE)
+Base_alpha <- list.files(path = "/home/constantin/windows/", pattern="boot_base_alpha", recursive = TRUE)
 Base_alpha <- mixedsort(Base_alpha)
 Base_alpha
 
 #Alpha-error list
-Error_alpha <- list.files(path = "/mnt/extStorage/constantin/windows/", pattern="errors_alpha", recursive = TRUE)
+Error_alpha <- list.files(path = "/home/constantin/windows/", pattern="errors_alpha", recursive = TRUE)
 Error_alpha <- mixedsort(Error_alpha)
 Error_alpha
 
 #Beta data list
-Base_beta <- list.files(path = "/mnt/extStorage/constantin/windows/", pattern="boot_base_beta.txt", recursive = TRUE)
+Base_beta <- list.files(path = "/home/constantin/windows/", pattern="boot_base_beta.txt", recursive = TRUE)
 Base_beta <- mixedsort(Base_beta)
 Base_beta
 
 #Beta-error list
-Error_beta <- list.files(path = "/mnt/extStorage/constantin/windows/", pattern="errors_beta", recursive = TRUE)
+Error_beta <- list.files(path = "/home/constantin/windows/", pattern="errors_beta", recursive = TRUE)
 Error_beta <- mixedsort(Error_beta)
 Error_beta
 
@@ -31,7 +31,7 @@ x <- (-5)
 
 for (i in 1:length(Base_alpha)){
   #print(Base_alpha[i])
-  setwd("/mnt/extStorage/constantin/windows")
+  setwd("/home/constantin/windows")
   y <- read.table(gsub(" ", "/t", Base_alpha[i]))[2]
   y.sd <- read.table(gsub(" ", "/t", Error_alpha[i]))[2]
   x <- x+5
@@ -51,7 +51,6 @@ for (i in 1:length(Base_alpha)){
   
 }
 
-setwd("/mnt/extStorage/sergio/plot")
 
 #Create a matrix with alpha data
 data_A <- list(x_list, y_list, y.sd_list)
@@ -88,7 +87,7 @@ x <- (-5)
 
 for (i in 1:length(Base_beta)){
   #print(Base_beta[i])
-  setwd("/mnt/extStorage/constantin/windows")
+  setwd("/home/constantin/windows")
   y <- read.table(gsub(" ", "/t", Base_beta[i]))[2]
   y.sd <- read.table(gsub(" ", "/t", Error_beta[i]))[2]
   x <- x+5
@@ -108,7 +107,6 @@ for (i in 1:length(Base_beta)){
   
 }
 
-setwd("/mnt/extStorage/sergio/plot")
 
 #Create a matrix with beta data
 data_B <- list(x_list, y_list, y.sd_list)
